@@ -1,22 +1,17 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>\{{ msg }}</h1>
-  </div>
+<template lang="jade">
+  hello
 </template>
 
 <script>
+import Hello from './components/Hello.vue'
 export default {
-  data () {
-    return {
-      msg: 'Hello Vue!'
-    }
+  components: {
+    Hello
   }
 }
 </script>
 
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
+<style lang="sass">
+  body
+    font-family: 'Open Sans', Helvetica, sans-serif
 </style>

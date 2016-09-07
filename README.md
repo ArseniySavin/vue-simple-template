@@ -1,33 +1,50 @@
-# webpack-simple
+# vue-simple-template
 
-> A simple Vue 2.0 Webpack & `vue-loader` setup for quick prototyping. Note this template is not suitable for production - for that you may want to wait for an official 2.0 webpack template.
+Простой шаблон для консольной утилиты [vue-cli](https://github.com/vuejs/vue-cli), в который входит:
+- [Vue.js](http://vuejs.org/) (версия 2.0-rc.4)
+- [Webpack](http://webpack.github.io/docs/what-is-webpack.html)
+- [vue-loader](http://vue-loader.vuejs.org/en/index.html)
+- [SASS](http://sass-lang.com/)
+- [Pug](https://pugjs.org/) (он же Jade)
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack-simple#1.0 my-project`
+Так же в шаблон встроена поддержка ES6 синтаксиса и Hot Reloading.
 
-### Usage
-
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
-
-``` bash
-$ npm install -g vue-cli
-$ vue init webpack-simple my-project
-$ cd my-project
-$ npm install
-$ npm run dev
-```
-
-### What's Included
-
-- `npm run dev`: Webpack + `vue-loader` with proper config for source maps & hot-reload.
-
-- `npm run build`: build with HTML/CSS/JS minification.
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader). Also check out the [breaking changes in vue-loader@9.0.0](https://github.com/vuejs/vue-loader/releases/tag/v9.0.0).
-
-### Fork It And Make Your Own
-
-You can fork this repo to create your own boilerplate, and use it with `vue-cli`:
+### Установка
 
 ``` bash
-vue init username/repo my-project
+# Устанавливаем vue-cli, если еще этого не делали
+npm install -g vue-cli
+# Загружаем шаблон в любую папку
+vue init GitHubTochkaDev/vue-simple-template my-project
+# Переходим в созданную папку
+cd my-project
+# Устанавливаем зависимости
+npm install
 ```
+
+### Использование
+
+Для разработки используется `webpack-dev-server`, в котором по умолчанию включена функция hot reload.
+
+``` bash
+# Запускаем одновременно сервер и сборку
+npm run dev
+```
+
+Для финальной сборки используется команда:
+``` bash
+# Делаем сборку с одновременной минификацией всего кода
+npm run build
+```
+
+### Альтернативы
+
+Вы можете сделать форк данного репозитория и сделать на его основе собственный шаблон и так же использовать его вместе с vue-cli.
+
+Либо использовать один из официальных шаблонов:
+
+- [webpack](https://github.com/vuejs-templates/webpack) - Webpack + vue-loader установка включающая в себя hot reload, jslint и тесты.
+- [webpack-simple](https://github.com/vuejs-templates/webpack-simple) - Простая Webpack + vue-loader установка для быстрого прототипирования.
+- [browserify](https://github.com/vuejs-templates/browserify) - Browserify + vueify установка включающая в себя hot-reload, jslint и юнит-тесты.
+- [browserify-simple](https://github.com/vuejs-templates/browserify-simple) - Простая Browserify + vueify установка для быстрого прототипирования.
+- [simple](https://github.com/vuejs-templates/simple) - Самая простая из возможных Vue установка из одного HTML файла.

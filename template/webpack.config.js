@@ -1,15 +1,11 @@
-var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
-  },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
+    path: __dirname + '/build',
+    publicPath: '/build/',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -30,17 +26,10 @@ module.exports = {
         }
       }
     ]
-  },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
-  devtool: '#eval-source-map'
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -51,6 +40,7 @@ if (process.env.NODE_ENV === 'production') {
       compress: {
         warnings: false
       }
-    })
+    }),
+    new webpack.optimize.OccurenceOrderPlugin()
   ])
 }

@@ -3,17 +3,17 @@
     "name": {
       "type": "string",
       "required": true,
-      "label": "Project name"
+      "label": "Название проекта"
     },
     "description": {
       "type": "string",
       "required": true,
-      "label": "Project description",
-      "default": "A Vue.js project"
+      "label": "Описание проекта",
+      "default": "Vue.js проект"
     },
     "author": {
       "type": "string",
-      "label": "Author"
+      "label": "Автор"
     }
   }
 }
