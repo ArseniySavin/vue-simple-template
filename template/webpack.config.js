@@ -26,6 +26,12 @@ module.exports = {
         }
       }
     ]
+  },
+  // https://github.com/vuejs/vue-loader/issues/9
+  vue: {
+    loaders: {
+      sass: 'vue-style-loader!css-loader!sass?indentedSyntax'
+    }
   }
 }
 

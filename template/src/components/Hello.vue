@@ -1,12 +1,12 @@
-<template lang="jade">
-    h1 {{ message }}
+<template lang="pug">
+    h1 \{{ message }}
 </template>
 
 <script>
     export default {
         data() {
             return {
-                message: 'Пора работать!'
+                message: 'Привет Vue!'
             }
         }
     }
