@@ -1,5 +1,6 @@
 <template lang="pug">
-    h1 \{{ message }}
+    div
+        h1 \{{ message }}
 </template>
 
 <script>
