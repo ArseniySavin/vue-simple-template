@@ -1,7 +1,7 @@
 # vue-simple-template
 
 Простой шаблон для консольной утилиты [vue-cli](https://github.com/vuejs/vue-cli), в который входит:
-- [Vue.js](http://vuejs.org/) (версия 2.0-rc.4)
+- [Vue.js](http://vuejs.org/) (версия 2.0)
 - [Webpack](http://webpack.github.io/docs/what-is-webpack.html)
 - [vue-loader](http://vue-loader.vuejs.org/en/index.html)
 - [SASS](http://sass-lang.com/)
