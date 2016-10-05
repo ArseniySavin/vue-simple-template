@@ -27,12 +27,15 @@ module.exports = {
       }
     ]
   },
-  // https://github.com/vuejs/vue-loader/issues/9
-  vue: {
-    loaders: {
-      sass: 'vue-style-loader!css-loader!sass?indentedSyntax'
-    }
-  }
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      vue: {
+        loaders: {
+          sass: 'vue-style-loader!css-loader!sass?indentedSyntax'
+        }
+      }
+    })
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
