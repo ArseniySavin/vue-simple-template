@@ -1,12 +1,14 @@
 <template lang="pug">
-  hello
+  div
+    h1 \{{ message }}
 </template>
 
 <script>
-import Hello from './components/Hello.vue'
 export default {
-  components: {
-    Hello
+  data() {
+    return {
+      message: 'Привет Vue!'
+    }
   }
 }
 </script>
@@ -16,4 +18,16 @@ export default {
     padding: 0
     margin: 0
     font-family: 'Open Sans', Helvetica, sans-serif
+  h1
+    display: block
+    position: absolute
+    width: 100%
+    height: 100px
+    top: 50%
+    margin: -50px 0 0 0
+    font-size: 54px
+    line-height: 64px
+    font-weight: 300
+    color: #525255
+    text-align: center
 </style>
