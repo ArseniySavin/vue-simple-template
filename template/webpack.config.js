@@ -1,21 +1,27 @@
-var webpack = require('webpack')
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: __dirname + '/build',
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/build/',
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+          }
+        }
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
@@ -26,16 +32,7 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      vue: {
-        loaders: {
-          sass: 'vue-style-loader!css-loader!sass?indentedSyntax'
-        }
-      }
-    })
-  ]
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -46,9 +43,19 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compress: {
-        warnings: false
+        warnings: false,
+        unused: true,
+        dead_code: true,
+        drop_console: true,
+      },
+      output: {
+        comments: false
       }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
     }),
     new webpack.optimize.OccurrenceOrderPlugin()
   ])

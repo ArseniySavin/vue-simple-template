@@ -13,5 +13,7 @@ export default {
 
 <style lang="sass">
   body
+    padding: 0
+    margin: 0
     font-family: 'Open Sans', Helvetica, sans-serif
 </style>
